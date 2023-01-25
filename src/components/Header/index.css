@@ -1,0 +1,26 @@
+.nav-container {
+  background-color: #475569;
+  padding: 10px;
+  height: 15vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-items {
+  list-style-type: none;
+}
+.nav-website-logo {
+  height: 60px;
+  width: 80px;
+}
+.home-jobs-section {
+  display: flex;
+  color: white;
+  width: 100px;
+  justify-content: space-between;
+}
+.list-home-job {
+  color: white;
+  outline: none;
+  list-style-type: none;
+}
