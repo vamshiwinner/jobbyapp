@@ -9,18 +9,42 @@
   padding: 30px;
 }
 .filters-container {
-  height: 100vh;
+  height: 100%;
   width: 30%;
   margin-right: 5%;
 }
 .profile-container {
-  background-color: red;
-  height: 100vh;
+  height: 100%;
   width: 65%;
 }
 .employment-type-list-item {
   list-style-type: none;
   display: flex;
+}
+.profile-logo {
+  height: 60px;
+  width: 60px;
+}
+.profile-heading {
+  font-size: 15px;
+  margin: 0px;
+  color: #6366f1;
+  font-family: 'Roboto';
+}
+.profile-pera {
+  font-size: 12px;
+  color: black;
+  font-family: 'Roboto';
+}
+.list-image {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
+  height: 100%;
+  width: 15vw;
+  border-radius: 20px;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 .list {
   list-style-type: none;
@@ -31,7 +55,93 @@
 .search-input {
   width: 250px;
   background-color: transparent;
+  border-style: solid;
+  border-color: #7e858e;
+  color: white;
 }
 .button {
   background-color: transparent;
+  border-style: solid;
+  border-color: #7e858e;
+}
+.search-icon {
+  color: #7e858e;
+}
+.job-item-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 60vw;
+  background-color: #7e858e;
+  border-radius: 20px;
+  padding: 20px;
+}
+.jobs-ul-conatiner {
+  margin: 0px;
+  padding: 0px;
+}
+.logo-title-container {
+  display: flex;
+  align-items: center;
+}
+.company-logo {
+  height: 50px;
+  width: 50px;
+  margin-right: 20px;
+}
+.company-heading {
+  font-size: 20px;
+  font-family: 'Roboto';
+}
+.rating-section {
+  display: flex;
+  align-items: center;
+}
+.rating-pera {
+  margin: 0px;
+}
+.star-icon {
+  color: #fbbf24;
+}
+.location-lpa-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.location-type-section {
+  display: flex;
+}
+.location-logo {
+  display: flex;
+  align-items: center;
+}
+.icons {
+  margin-right: 20px;
+}
+.hr-line {
+  background-color: #7e858e;
+  width: 100%;
+}
+.description-heading {
+  font-size: 20px;
+}
+.products-loader-container {
+  color: white;
+}
+
+.no-jobs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 50vw;
+}
+.no-jobs-image {
+  height: 300px;
+  width: 300px;
+}
+.err-msg {
+  color: red;
 }

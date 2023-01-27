@@ -7,6 +7,8 @@ class Login extends Component {
   state = {
     username: '',
     password: '',
+    isErrmessage: false,
+    errmessage: '',
   }
 
   onBlurUserName = event => {
@@ -29,54 +31,61 @@ class Login extends Component {
     const responce = await fetch(url, options)
     const data = await responce.json()
     const jwtToken = data.jwt_token
-    console.log(data.jwt_token)
-    console.log(responce)
+
     if (responce.ok === true) {
       Cookies.set('jwt_token', jwtToken, {expires: 30})
       history.replace('/')
+    } else {
+      console.log(data.error_msg)
+      this.setState({isErrmessage: true, errmessage: data.error_msg})
     }
   }
 
-  renderLoginBox = () => (
-    <div className="login-box">
-      <img
-        className="app-logo-image"
-        src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
-        alt="website logo"
-      />
-      <div className="input-conatiners">
-        <label htmlFor="user-name">USERNAME</label>
-        <input
-          onBlur={this.onBlurUserName}
-          placeholder="Username"
-          className="input-ele"
-          id="user-name"
-        />
-      </div>
-      <div className="input-conatiners">
-        <label htmlFor="password">PASSWORD</label>
-        <input
-          onBlur={this.onBlurPassword}
-          placeholder="Password"
-          className="input-ele"
-          id="password"
-          type="password"
-        />
-      </div>
+  renderLoginBox = () => {
+    const {isErrmessage, errmessage} = this.state
 
-      <button
-        onClick={this.onClickLoginButton}
-        className="button-login"
-        type="button"
-      >
-        Login
-      </button>
-    </div>
-  )
+    return (
+      <div className="login-box">
+        <img
+          className="app-logo-image"
+          src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
+          alt="website logo"
+        />
+        <div className="input-conatiners">
+          <label htmlFor="user-name">USERNAME</label>
+          <input
+            onBlur={this.onBlurUserName}
+            placeholder="Username"
+            className="input-ele"
+            id="user-name"
+          />
+        </div>
+        <div className="input-conatiners">
+          <label htmlFor="password">PASSWORD</label>
+          <input
+            onBlur={this.onBlurPassword}
+            placeholder="Password"
+            className="input-ele"
+            id="password"
+            type="password"
+          />
+        </div>
+
+        <button
+          onClick={this.onClickLoginButton}
+          className="button-login"
+          type="button"
+        >
+          Login
+        </button>
+        {isErrmessage && <p className="err-msg">*{errmessage}</p>}
+      </div>
+    )
+  }
 
   render() {
-    const {username, password} = this.state
-    console.log(username, password)
+    const {username, password, isErrmessage, errmessage} = this.state
+    console.log(username, password, isErrmessage, errmessage)
     return <div className="login-bg-container">{this.renderLoginBox()}</div>
   }
 }
