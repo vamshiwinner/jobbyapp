@@ -1,0 +1,78 @@
+.jobDetails-success-container {
+  background-color: #000000;
+  height: 100%;
+  width: 100vw;
+  color: #f8fafc;
+}
+.job-detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.job-box {
+  padding: 20px;
+  height: 100%;
+  width: 80vw;
+  background-color: #272727;
+  border-radius: 20px;
+}
+.heading-visit {
+  display: flex;
+  justify-content: space-between;
+}
+.heading {
+  font-size: 17px;
+}
+.icon-visit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.skill-list {
+  list-style-type: none;
+  display: flex;
+  margin: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+.ul-skill-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 45vw;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+.skill-image {
+  height: 60px;
+  width: 60px;
+}
+.life-at-company-image {
+  display: flex;
+  justify-content: space-between;
+}
+.similar-jobs-ul {
+  display: flex;
+}
+.similar-job-list {
+  list-style-type: none;
+  background-color: #272727;
+  height: 100%;
+  width: 30vw;
+  margin-right: 20px;
+  border-radius: 20px;
+  padding: 20px;
+}
+.failure-container-job-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.failure-bg-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: #000000;
+}

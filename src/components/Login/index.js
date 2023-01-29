@@ -19,7 +19,8 @@ class Login extends Component {
     this.setState({password: event.target.value})
   }
 
-  onClickLoginButton = async () => {
+  onClickLoginButton = async event => {
+    event.preventDefault()
     const {history} = this.props
     const {username, password} = this.state
     const userDetails = {username, password}
@@ -51,7 +52,7 @@ class Login extends Component {
           src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
           alt="website logo"
         />
-        <div className="input-conatiners">
+        <form onSubmit={this.onClickLoginButton} className="input-conatiners">
           <label htmlFor="user-name">USERNAME</label>
           <input
             onBlur={this.onBlurUserName}
@@ -59,25 +60,22 @@ class Login extends Component {
             className="input-ele"
             id="user-name"
           />
-        </div>
-        <div className="input-conatiners">
-          <label htmlFor="password">PASSWORD</label>
-          <input
-            onBlur={this.onBlurPassword}
-            placeholder="Password"
-            className="input-ele"
-            id="password"
-            type="password"
-          />
-        </div>
 
-        <button
-          onClick={this.onClickLoginButton}
-          className="button-login"
-          type="button"
-        >
-          Login
-        </button>
+          <div className="input-conatiners">
+            <label htmlFor="password">PASSWORD</label>
+            <input
+              onBlur={this.onBlurPassword}
+              placeholder="Password"
+              className="input-ele"
+              id="password"
+              type="password"
+            />
+          </div>
+
+          <button className="button-login" type="submit">
+            Login
+          </button>
+        </form>
         {isErrmessage && <p className="err-msg">*{errmessage}</p>}
       </div>
     )
